@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="size_zero">0dp</dimen>
+    <dimen name="size_xxx_small">2dp</dimen>
+    <dimen name="size_xx_small">4dp</dimen>
+    <dimen name="size_x_small">6dp</dimen>
+    <dimen name="size_small">8dp</dimen>
+    <dimen name="size_medium">12dp</dimen>
+    <dimen name="size_x_medium">16dp</dimen>
+    <dimen name="size_xx_medium">20dp</dimen>
+    <dimen name="size_xxx_medium">24dp</dimen>
+    <dimen name="size_large">28dp</dimen>
+    <dimen name="size_x_large">32dp</dimen>
+    <dimen name="size_xx_large">36dp</dimen>
+    <dimen name="size_xxx_large">40dp</dimen>
+    <dimen name="size_xxxx_large">48dp</dimen>
+    <dimen name="size_xxxxx_large">56dp</dimen>
+
+
+    <dimen name="text_size_x_small">11sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_medium">14sp</dimen>
+    <dimen name="text_size_x_medium">16sp</dimen>
+    <dimen name="text_size_xx_medium">18sp</dimen>
+    <dimen name="text_size_large">20sp</dimen>
+    <dimen name="text_size_x_large">22sp</dimen>
+    <dimen name="text_size_xx_large">24sp</dimen>
+    <dimen name="text_size_xxx_large">28sp</dimen>
+    <dimen name="text_size_xxxx_large">32sp</dimen>
+
+</resources>

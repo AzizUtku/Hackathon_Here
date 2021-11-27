@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/roomsFragment"
+        android:icon="@drawable/ic_baseline_meeting_room_24"
+        android:title="Rooms" />
+    <item
+        android:id="@+id/mapsFragment"
+        android:icon="@drawable/ic_baseline_map_24"
+        android:title="Map" />
+    <item
+        android:id="@+id/browseFragment"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="Browse" />
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Profile" />
+
+</menu>
