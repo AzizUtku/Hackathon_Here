@@ -7,6 +7,7 @@ plugins {
     id("androidx.navigation.safeargs.kotlin")
     id("dagger.hilt.android.plugin")
     id("kotlin-android")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -53,14 +54,12 @@ dependencies{
     implementation(AndroidX.fragmentKtx)
     implementation(AndroidX.navigationFragmentKtx)
     implementation(AndroidX.navigationUiKtx)
+    implementation(AndroidX.legacySupport)
 
     implementation(Kotlinx.coroutinesCore)
     implementation(Kotlinx.coroutinesPlayServices)
 
     implementation(Hilt.android)
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
 
     kapt(Hilt.compiler)
     kapt(AndroidX.lifecycleCompiler)
@@ -68,6 +67,7 @@ dependencies{
     implementation(Google.material)
     implementation(Google.firebaseFirestore)
     implementation(Google.firebaseAuth)
+    implementation(Google.playServicesMaps)
 
     implementation(Other.glide)
     implementation(Other.lottie)

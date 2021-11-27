@@ -12,4 +12,7 @@ object Build {
     const val navigationSafeArgs
         = "androidx.navigation:navigation-safe-args-gradle-plugin:${AndroidX.navigationVersion}"
 
+    const val mapsPlatform
+        = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:${Google.mapsPlatformVersion}"
+
 }

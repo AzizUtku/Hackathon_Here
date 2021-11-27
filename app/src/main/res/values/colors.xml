@@ -20,6 +20,7 @@
     <color name="colorBgDark">#F68945</color>
     <color name="colorBgDarkDisabled">#80F68945</color>
     <color name="colorBgDarkPressed">#BA5211</color>
+    <color name="colorRed">#F44336</color>
 
     <color name="colorHint">#65827A</color>
     <color name="colorEditText">#30413C</color>

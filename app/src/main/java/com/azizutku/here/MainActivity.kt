@@ -14,9 +14,6 @@ import com.google.firebase.auth.AuthResult
 import dagger.hilt.android.AndroidEntryPoint
 import android.view.WindowManager
 
-
-
-
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
