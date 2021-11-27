@@ -3,5 +3,12 @@
     <string name="text_button_signin">Sign in</string>
     <string name="text_checkbox_remember_me">Remember me</string>
     <string name="hint_password">Password</string>
-    <string name="hint_email">Email</string>
+    <string name="hint_email">Email address</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_surname">Surname</string>
+    <string name="text_member_of_civil_society">I am a member of civil society organization</string>
+    <string name="hint_civil_society_organization">Civil Society Organization</string>
+    <string name="text_sign_up">Sign up</string>
+    <string name="text_already_have_an_account">Already have an account?</string>
+    <string name="text_create_an_account">Create an account</string>
 </resources>

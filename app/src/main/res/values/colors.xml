@@ -26,4 +26,6 @@
     <color name="colorBottomNavInactive">#A9A9AB</color>
     <color name="colorBottomNavActive">#FFFFFF</color>
 
+    <color name="colorTextMain">#030C1E</color>
+
 </resources>
