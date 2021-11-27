@@ -9,7 +9,11 @@
         android:id="@+id/roomsFragment"
         android:name="com.azizutku.here.presentation.rooms.RoomsFragment"
         android:label="rooms_fragment"
-        tools:layout="@layout/rooms_fragment" />
+        tools:layout="@layout/rooms_fragment" >
+        <action
+            android:id="@+id/action_roomsFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
     <fragment
         android:id="@+id/browseFragment"
         android:name="com.azizutku.here.presentation.browse.BrowseFragment"
@@ -25,4 +29,8 @@
         android:name="com.azizutku.here.presentation.profile.ProfileFragment"
         android:label="profile_fragment"
         tools:layout="@layout/profile_fragment" />
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.azizutku.here.presentation.auth.SignInFragment"
+        android:label="SignInFragment" />
 </navigation>

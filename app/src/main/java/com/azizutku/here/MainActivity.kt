@@ -1,12 +1,16 @@
 package com.azizutku.here
 
+import android.graphics.Color
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.Window
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.azizutku.here.databinding.ActivityMainBinding
@@ -14,6 +18,10 @@ import com.azizutku.here.vo.DataState
 import com.google.firebase.auth.AuthResult
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
+import android.view.WindowManager
+
+
+
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -31,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         subscribeObservers()
         setupNavControllers()
 
-        authViewModel.login("azizutku@gmail.com", "12345678a")
+        authViewModel.getUserFromCache()
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -48,13 +56,9 @@ class MainActivity : AppCompatActivity() {
             when (dataState) {
                 is DataState.Success<AuthResult> -> {
                     authResult = dataState.data
-                    Timber.i("Userr: ${dataState.data.user?.email}")
                 }
                 is DataState.Error -> {
-                    // no op
-                }
-                is DataState.Loading -> {
-                    // no op
+                    navController.navigate(R.id.action_roomsFragment_to_signInFragment)
                 }
                 else -> {
                     // no op
@@ -86,6 +90,11 @@ class MainActivity : AppCompatActivity() {
 
         }
         binding.bottomNavigationView.setupWithNavController(navController)
+    }
+
+    fun updateStatusBarColor(color: Int) {
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.statusBarColor = color
     }
 
 }

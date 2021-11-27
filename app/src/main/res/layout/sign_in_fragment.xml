@@ -1,13 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.auth.SignInFragment">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
 
-    <TextView
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/auth_motion"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:background="@color/colorBackground"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layoutDescription="@xml/fragment_sign_in_scene"
+        app:showPaths="false"
+        tools:context=".ui.auth.AuthActivity">
 
-</FrameLayout>
+        <View
+            android:id="@+id/auth_view_top_gradient"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_auth_gradient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.45"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/auth_img_curved_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/auth_view_top_gradient"
+            android:adjustViewBounds="true"
+            android:cropToPadding="true"
+            android:src="@drawable/bg_curved_line"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/auth_view_top_gradient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/auth_card_center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:visibility="visible"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="2dp"
+            app:contentPaddingBottom="36dp"
+            app:contentPaddingLeft="30dp"
+            app:contentPaddingRight="30dp"
+            app:contentPaddingTop="36dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.85">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/auth_img_logo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="true"
+                    android:src="@drawable/app_logo"
+                    app:layout_constraintBottom_toTopOf="@id/signin_input_username"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.4" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/signin_input_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_x_medium"
+                    app:boxBackgroundMode="none"
+                    app:layout_constraintBottom_toTopOf="@id/signin_input_password"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/auth_img_logo">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/signin_edt_username"
+                        style="@style/InputTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_user"
+                        android:hint="@string/hint_email"
+                        android:inputType="text" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/signin_input_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxBackgroundMode="none"
+                    app:endIconMode="password_toggle"
+                    android:layout_marginTop="@dimen/size_xx_small"
+                    app:layout_constraintBottom_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/signin_input_username">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/signin_edt_password"
+                        style="@style/InputTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_password"
+                        android:hint="@string/hint_password"
+                        android:inputType="textPassword" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <CheckBox
+                    android:id="@+id/auth_check_remember"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_medium"
+                    android:checked="true"
+                    android:text="@string/text_checkbox_remember_me"
+                    app:layout_constraintBottom_toTopOf="@id/auth_btn_login"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/signin_input_password" />
+
+                <Button
+                    android:id="@+id/auth_btn_login"
+                    style="@style/ButtonTheme"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/signin_input_password"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/text_button_signin"
+                    android:background="@drawable/bg_button_primary"
+                    app:layout_constraintBottom_toTopOf="@id/signin_txt_sign_up"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/auth_check_remember" />
+
+
+                <TextView
+                    android:id="@+id/signin_txt_sign_up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:padding="4dp"
+                    android:layout_marginTop="@dimen/size_x_medium"
+                    android:text="Don't you have an account?"
+                    android:textColor="@color/colorBgDark"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toTopOf="@id/signin_txt_continue_as_a_guest"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/auth_btn_login" />
+
+                <TextView
+                    android:id="@+id/signin_txt_continue_as_a_guest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:padding="4dp"
+                    android:text="Continue as a guest"
+                    android:textColor="@color/colorBgDark"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/signin_txt_sign_up" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+</layout>
