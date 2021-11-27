@@ -43,6 +43,7 @@ class SignUpFragment : Fragment() {
     }
 
     private fun initUi() {
+        binding.toolbar.toolbarTitle.text = resources.getString(R.string.text_create_an_account)
         binding.txtSignIn.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_signUpFragment_to_signInFragment)
         }

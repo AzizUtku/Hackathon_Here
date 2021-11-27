@@ -35,4 +35,7 @@
 
     <color name="colorDividerBottomSheet">#E0E0E0</color>
 
+    <color name="colorToolbar">#FFFFFF</color>
+    <color name="colorToolbarText">#000000</color>
+
 </resources>
