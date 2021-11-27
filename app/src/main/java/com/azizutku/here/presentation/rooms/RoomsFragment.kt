@@ -69,6 +69,7 @@ class RoomsFragment : Fragment() {
 
     private fun initUi() {
         binding.toolbar.toolbarTitle.text = getString(R.string.title_toolbar_activities)
+        binding.toolbar.toolbarImage.setBackgroundResource(R.drawable.app_logo)
         binding.recyclerRoomsOnOrganization.layoutManager = object : LinearLayoutManager(
             requireContext(),
             HORIZONTAL,

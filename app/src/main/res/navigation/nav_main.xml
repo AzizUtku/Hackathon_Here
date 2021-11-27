@@ -58,5 +58,12 @@
         <argument
             android:name="room"
             app:argType="com.azizutku.here.data.model.Room" />
+        <action
+            android:id="@+id/action_roomFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.azizutku.here.presentation.rooms.chat.ChatFragment"
+        android:label="ChatFragment" />
 </navigation>

@@ -11,6 +11,7 @@
     <color name="b">#FFFFFFFF</color>
 
     <color name="colorBackground">#F8F8FB</color>
+    <color name="colorGray">#9BA6BA</color>
 
     <color name="colorBgSecondaryDark">#00D7BF</color>
     <color name="colorBgSecondaryDarkDisabled">#806EFEEE</color>

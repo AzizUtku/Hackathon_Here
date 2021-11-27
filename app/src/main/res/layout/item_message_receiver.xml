@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item_message_receiver_rlt_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="true"
+        android:paddingVertical="5dp"
+        android:paddingStart="6dp"
+        android:paddingEnd="90dp"
+        tools:viewBindingIgnore="true">
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_regular"
+            tools:text="Utku"
+            android:textColor="@color/colorTextMain"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/txt_body"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txt_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_message_receiver"
+            android:elevation="2dp"
+            android:fontFamily="@font/avenirnext_medium"
+            android:padding="12dp"
+            tools:text="Placeholder message"
+            android:textColor="#303848"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toEndOf="@id/view_corner"
+            app:layout_constraintTop_toBottomOf="@id/txt_name"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/view_corner"
+            android:layout_width="24dp"
+            android:layout_height="18dp"
+            app:layout_constraintBottom_toBottomOf="@id/txt_body"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="0dp"
+            android:background="@drawable/bg_left_corner" />
+
+        <TextView
+            android:id="@+id/txt_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txt_body"
+            app:layout_constraintStart_toStartOf="@id/txt_body"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/avenirnext_medium"
+            tools:text="18:10"
+            android:textColor="#747987"
+            android:textSize="14sp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

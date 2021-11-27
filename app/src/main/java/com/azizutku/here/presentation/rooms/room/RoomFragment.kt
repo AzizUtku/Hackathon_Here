@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.azizutku.here.R
 import com.azizutku.here.data.model.Room
@@ -55,6 +56,9 @@ class RoomFragment : Fragment() {
         binding.txtParticipants.text = room.participants.toString()
         binding.txtLocation.text = room.location ?: "Not specified"
         binding.imgPrivate.setVisible(room.isPrivate)
+        binding.btnGoChat.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_roomFragment_to_chatFragment)
+        }
     }
 
 }

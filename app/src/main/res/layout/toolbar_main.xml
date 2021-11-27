@@ -19,8 +19,7 @@
         <ImageView
             android:id="@+id/toolbar_image"
             android:layout_width="28dp"
-            android:layout_height="28dp"
-            app:srcCompat="@drawable/app_logo" />
+            android:layout_height="28dp" />
 
         <TextView
             android:id="@+id/toolbar_title"
