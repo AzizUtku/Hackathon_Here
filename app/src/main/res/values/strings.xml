@@ -11,4 +11,7 @@
     <string name="text_sign_up">Sign up</string>
     <string name="text_already_have_an_account">Already have an account?</string>
     <string name="text_create_an_account">Create an account</string>
+    <string name="text_button_okay">OK</string>
+    <string name="title_sorry">Sorry</string>
+    <string name="hint_entrance_code">Entrance code</string>
 </resources>

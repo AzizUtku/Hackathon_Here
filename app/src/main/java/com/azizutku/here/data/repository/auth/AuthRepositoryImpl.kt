@@ -7,6 +7,7 @@ import com.azizutku.here.vo.DataState
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.onEach
@@ -34,6 +35,7 @@ class AuthRepositoryImpl
 
     override suspend fun login(email: String, password: String): Flow<DataState<AuthResult>> = flow {
         emit(DataState.Loading)
+        delay(1200)
         runCatching {
             val authResult = remoteDataSource.login(firebaseAuth, email, password)
             cacheDataSource.saveUser(authResult)

@@ -28,4 +28,11 @@
 
     <color name="colorTextMain">#030C1E</color>
 
+    <!-- Shades of black -->
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlack87">#DE000000</color>
+    <color name="colorBlack60">#99000000</color>
+
+    <color name="colorDividerBottomSheet">#E0E0E0</color>
+
 </resources>
