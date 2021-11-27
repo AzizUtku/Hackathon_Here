@@ -9,4 +9,7 @@ object Build {
 
     const val googleServices = "com.google.gms:google-services:${Google.servicesVersion}"
 
+    const val navigationSafeArgs
+        = "androidx.navigation:navigation-safe-args-gradle-plugin:${AndroidX.navigationVersion}"
+
 }

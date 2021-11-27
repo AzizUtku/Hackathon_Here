@@ -17,12 +17,13 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import android.opengl.ETC1.getHeight
 import android.widget.LinearLayout
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 
 import androidx.recyclerview.widget.RecyclerView
 
 import androidx.recyclerview.widget.LinearLayoutManager
-
-
+import com.azizutku.here.extensions.setVisible
 
 
 @AndroidEntryPoint
@@ -88,6 +89,7 @@ class RoomsFragment : Fragment() {
                 is DataState.Success<List<Room>> -> {
                     loadingDialog.dismiss()
                     adapterOrganization.submitList(dataState.data)
+                    binding.txtInOrganization.setVisible(true)
                 }
                 is DataState.Error -> {
                     loadingDialog.dismiss()
@@ -109,6 +111,7 @@ class RoomsFragment : Fragment() {
                 is DataState.Success<List<Room>> -> {
                     loadingDialog.dismiss()
                     adapterTurkey.submitList(dataState.data)
+                    binding.txtInTurkey.setVisible(true)
                 }
                 is DataState.Error -> {
                     loadingDialog.dismiss()
@@ -127,7 +130,8 @@ class RoomsFragment : Fragment() {
     }
 
     private fun onRoomClicked(room: Room) {
-        // TODO: Implement method
+        val action = RoomsFragmentDirections.actionRoomsFragmentToRoomFragment(room = room)
+        findNavController().navigate(action)
     }
 
 }

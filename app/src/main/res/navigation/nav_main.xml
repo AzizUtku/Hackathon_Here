@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_roomsFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_roomsFragment_to_roomFragment"
+            app:destination="@id/roomFragment" />
     </fragment>
     <fragment
         android:id="@+id/browseFragment"
@@ -47,5 +50,13 @@
         <action
             android:id="@+id/action_signUpFragment_to_roomsFragment"
             app:destination="@id/roomsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomFragment"
+        android:name="com.azizutku.here.presentation.rooms.room.RoomFragment"
+        android:label="RoomFragment">
+        <argument
+            android:name="room"
+            app:argType="com.azizutku.here.data.model.Room" />
     </fragment>
 </navigation>

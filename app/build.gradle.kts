@@ -3,6 +3,8 @@ plugins {
     kotlin("android")
     id("com.google.gms.google-services")
     id("kotlin-kapt")
+    id("kotlin-android-extensions")
+    id("androidx.navigation.safeargs.kotlin")
     id("dagger.hilt.android.plugin")
     id("kotlin-android")
 }
