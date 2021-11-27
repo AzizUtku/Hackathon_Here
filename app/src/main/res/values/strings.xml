@@ -14,4 +14,5 @@
     <string name="text_button_okay">OK</string>
     <string name="title_sorry">Sorry</string>
     <string name="hint_entrance_code">Entrance code</string>
+    <string name="title_toolbar_activities">Activities</string>
 </resources>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:contentPadding="16dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txt_topic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:fontFamily="@font/montserrat_semibold"
+                        tools:text="TOPIC"
+                        android:letterSpacing="0.1"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorTextMain"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginEnd="4dp"
+                        android:src="@drawable/ic_baseline_home_24"
+                        app:tint="@color/orange_500" />
+
+                    <ImageView
+                        android:id="@+id/img_private"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_baseline_lock_24"
+                        app:tint="@color/orange_500" />
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_baseline_more_horiz_24"
+                        app:tint="@color/colorBlack20" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txt_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    tools:text="Title"
+                    android:letterSpacing="0"
+                    android:textColor="@color/colorTextMain"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/size_medium"
+                    android:gravity="start">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="0dp"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/image_logo"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:scaleType="fitCenter" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:orientation="vertical"
+                        android:layout_gravity="center">
+
+
+                        <TextView
+                            android:id="@+id/txt_desc"
+                            android:layout_width="wrap_content"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
+                            tools:text="Lorem ipsum solar amet"
+                            android:textColor="@color/colorTextMain"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="6dp"
+                            android:layout_gravity="start"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/txt_participants"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_regular"
+                                tools:text="33"
+                                android:layout_marginEnd="4dp"
+                                android:layout_gravity="center"
+                                android:textColor="@color/colorTextMain"
+                                android:textSize="14sp" />
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_baseline_person_24"
+                                app:tint="@color/colorBlack40" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="8dp"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/montserrat_regular"
+                                tools:text="/"
+                                android:textColor="@color/colorTextMain"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txt_needs"
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:layout_marginEnd="4dp"
+                                tools:text="595"
+                                android:textColor="@color/colorTextMain"
+                                android:textSize="14sp" />
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_baseline_needs"
+                                app:tint="@color/colorBlack40" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linear_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="6dp"
+                            android:layout_gravity="start"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/txt_location"
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:layout_marginEnd="4dp"
+                                tools:text="Besiktas / Istanbul"
+                                android:textColor="@color/colorTextMain"
+                                android:textSize="14sp" />
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_baseline_location_on_24"
+                                app:tint="@color/colorBlack40" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,23 +1,17 @@
 package com.azizutku.here
 
-import android.graphics.Color
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.Window
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.azizutku.here.databinding.ActivityMainBinding
 import com.azizutku.here.vo.DataState
 import com.google.firebase.auth.AuthResult
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 import android.view.WindowManager
 
 
@@ -51,13 +45,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun subscribeAuth() {
-        authViewModel.dataStateUser.observe(this, { dataState ->
+        authViewModel.dataStateAuthResult.observe(this, { dataState ->
             when (dataState) {
                 is DataState.Success<AuthResult> -> {
                     authResult = dataState.data
                 }
                 is DataState.Error -> {
-                    navController.navigate(R.id.action_roomsFragment_to_signInFragment)
+                    // navController.navigate(R.id.action_roomsFragment_to_signInFragment)
                 }
                 else -> {
                     // no op

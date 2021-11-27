@@ -1,16 +1,15 @@
 package com.azizutku.here.data.repository.auth
 
+import com.azizutku.here.data.model.User
 import com.azizutku.here.data.repository.auth.datasource.AuthCacheDataSource
 import com.azizutku.here.data.repository.auth.datasource.AuthRemoteDataSource
 import com.azizutku.here.domain.repository.auth.AuthRepository
 import com.azizutku.here.vo.DataState
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.onEach
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -23,7 +22,7 @@ class AuthRepositoryImpl
 
     override suspend fun getUser(): Flow<DataState<AuthResult>> = flow {
         emit(DataState.Loading)
-        val user = cacheDataSource.getUser()
+        val user = cacheDataSource.getAuthResult()
         if (user != null) {
             Timber.i("User fetched from cache: $user")
             emit(DataState.Success(user))
@@ -38,8 +37,20 @@ class AuthRepositoryImpl
         delay(1200)
         runCatching {
             val authResult = remoteDataSource.login(firebaseAuth, email, password)
-            cacheDataSource.saveUser(authResult)
+            cacheDataSource.saveAuthResult(authResult)
             emit(DataState.Success(authResult))
+        }.onFailure {
+            Timber.i(it)
+            emit(DataState.Error(it))
+        }
+    }
+
+    override suspend fun signup(): Flow<DataState<User>> = flow {
+        emit(DataState.Loading)
+        runCatching {
+            val user = remoteDataSource.signup()
+            cacheDataSource.saveUser(user)
+            emit(DataState.Success(user))
         }.onFailure {
             Timber.i(it)
             emit(DataState.Error(it))

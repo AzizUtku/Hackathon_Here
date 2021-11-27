@@ -8,6 +8,7 @@ import com.azizutku.here.data.repository.auth.datasourceImpl.AuthRemoteDataSourc
 import com.azizutku.here.domain.repository.auth.AuthRepository
 import com.azizutku.here.domain.usecase.auth.GetUserUseCase
 import com.azizutku.here.domain.usecase.auth.LoginUseCase
+import com.azizutku.here.domain.usecase.auth.SignupUseCase
 import com.google.firebase.auth.FirebaseAuth
 import dagger.Module
 import dagger.Provides
@@ -50,6 +51,12 @@ object AuthModule {
     @Provides
     fun provideGetUserUseCase(repository: AuthRepository): GetUserUseCase {
         return GetUserUseCase(repository)
+    }
+
+    @Singleton
+    @Provides
+    fun provideSignupUseCase(repository: AuthRepository): SignupUseCase {
+        return SignupUseCase(repository)
     }
 
 }

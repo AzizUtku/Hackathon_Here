@@ -54,7 +54,7 @@ class SignInFragment : Fragment() {
     }
 
     private fun subscribeAuth() {
-        authViewModel.dataStateUser.observe(viewLifecycleOwner, { dataState ->
+        authViewModel.dataStateAuthResult.observe(viewLifecycleOwner, { dataState ->
             when (dataState) {
                 is DataState.Success<AuthResult> -> {
                     loadingDialog.dismiss()
